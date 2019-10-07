@@ -19,7 +19,7 @@ body{
     font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
 }
 
 .header{
@@ -69,7 +69,7 @@ body{
 .heading-primary-main{
     display: block;
     font-size: 60px;
-    font-weight: 4 00;
+    font-weight: 400;
     letter-spacing: 35px;
 
     animation-name: moveInLeft;
@@ -91,32 +91,33 @@ body{
     animation: moveInRight 1s ease-in-out;
 }
 
-@keyframes moveInLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    80%{
-        transform: translateX(10px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInRight{
-    0%{
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    80%{
-        transform: translateX(10px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
+@keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem); }
+    80% {
+      transform: translateX(1rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } }
+  
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(10rem); }
+    80% {
+      transform: translateX(-1rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } }
+  
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } 
 
 }
 
@@ -128,6 +129,7 @@ body{
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative;
 }
 
 .btn:hover{
@@ -143,4 +145,32 @@ body{
 .btn-white{
     background-color: #fff;
     color: #777;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+} 
+
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
 }
