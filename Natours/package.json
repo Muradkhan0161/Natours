@@ -4,7 +4,8 @@
   "description": "This is the landing page",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss resources/css/style.css -w"
+    "compile:sass": "node-sass — watch sass/main.scss -o resources/css/style.css"
+
   },
   "author": "",
   "license": "ISC",
